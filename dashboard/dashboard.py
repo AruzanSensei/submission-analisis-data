@@ -205,7 +205,7 @@ if "dteday" in all_df.columns:
 st.title("Pola Waktu Penyewaan Sepeda")
 
 # Hour range selection slider
-selected_hour_range = st.slider("Pilih Rentang Jam", min_value=0, max_value=23, value=(0, 23))
+selected_hour_range = st.slider("Pilih Rentang Jam", min_value=0, max_value=30, value=(0, 30))
 
 # Filter data by hour range
 if "hr" in all_df.columns and "cnt_hourly" in all_df.columns:
