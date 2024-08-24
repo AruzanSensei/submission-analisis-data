@@ -1,19 +1,19 @@
-# 🎈 Blank app template
+# Proyek-Analisis-Data
+## Setup Environment
+```
+conda create --name main-ds python=3.9
+conda activate main-ds
 
-A simple Streamlit app template for you to modify!
+pip install numpy pandas scipy matplotlib seaborn jupyter streamlit babel
+Babel==2.14.0
+markdown-it-py==3.0.0
+matplotlib==3.8.3
+pandas==2.2.1
+seaborn==0.13.2
+streamlit==1.31.1
+```
+## Run Streamlit App
+streamlit run dashboard.py
 
-[![Open in Streamlit](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://blank-app-template.streamlit.app/)
-
-### How to run it on your own machine
-
-1. Install the requirements
-
-   ```
-   $ pip install -r requirements.txt
-   ```
-
-2. Run the app
-
-   ```
-   $ streamlit run streamlit_app.py
-   ```
+## URL untuk dashboard
+https://tugasproyektrya.streamlit.app/
