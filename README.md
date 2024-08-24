@@ -3,7 +3,9 @@
 ## Proyek analisis data
 ini adalah submission untuk tugas akhir kelas analisis data di [dicoding](https://www.dicoding.com/).
 
+
 _silahkan di koreksi :D_
+
 
 ## Setup Environment
 ```
@@ -18,8 +20,10 @@ pandas==2.2.1
 seaborn==0.13.2
 streamlit==1.31.1
 ```
+
 ## Run Streamlit App
 streamlit run dashboard.py
+
 
 ## URL dashboard
 [KLIK AKU!!](https://submission--bike-sharing--dicoding.streamlit.app/)
