@@ -100,7 +100,7 @@ else:
 
 
 # Pertanyaan 1
-st.title("Pola Waktu Penyewaan Sepeda")
+st.title("1. Pola Waktu Penyewaan Sepeda")
 
 # Hour range selection slider
 selected_hour_range = st.slider("Pilih Rentang Jam", min_value=0, max_value=30, value=(0, 30))
@@ -123,7 +123,7 @@ else:
 st.text_area("KESIMPULAN:","Penyewaan sepeda rata-rata meningkat pada jam 16.00-17.00, menunjukkan bahwa pelanggan lebih sering menyewa sepeda di sore hari.")
 
 # Pertanyaan 2
-st.title("Analisis RF :mag:")
+st.title("2. Analisis RF :mag:")
 st.subheader("Recency dan Frequency pada Setiap Bulan:")
 
 # Create the RF DataFrame
@@ -172,7 +172,7 @@ else:
 st.text_area("KESIMPULAN:","Pada beberapa bulan terakhir, pelanggan sering melakukan penyewaan sepeda, ditunjukkan oleh nilai recency yang rendah dan frekuensi yang tinggi.")
 
 # Pertanyaan 3
-st.title("Demografi Pelanggan")
+st.title("3. Demografi Pelanggan")
 st.subheader("Jumlah Pelanggan Berdasarkan Musim :fallen_leaf:")
 
 if not byseason_df.empty:
