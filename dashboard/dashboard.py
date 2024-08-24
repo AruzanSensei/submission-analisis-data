@@ -36,7 +36,7 @@ st.write(
     """
 )
 
-st.write(".")
+st.write("\n")
 
 # Validate date range in data
 if "dteday" in all_df.columns:
@@ -100,7 +100,7 @@ else:
     byseason_df = pd.DataFrame()
     daily_orders_df = pd.DataFrame()
 
-st.write(".")
+st.write("/n")
 
 # Pertanyaan 1
 st.title("1. Pola Waktu Penyewaan Sepeda")
