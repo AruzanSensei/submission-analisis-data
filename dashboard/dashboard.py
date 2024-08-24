@@ -98,37 +98,6 @@ if min_date and max_date:
 else:
     main_df = pd.DataFrame()
 
-# Display visualization by season
-st.title("Demografi Pelanggan")
-st.subheader("Jumlah Pelanggan Berdasarkan Musim :fallen_leaf:")
-
-if not byseason_df.empty:
-    fig, ax = plt.subplots(figsize=(20, 10))
-    colors1 = ["#D3D3D3", "#D3D3D3", "#469536", "#D3D3D3", "#D3D3D3"]
-    
-    sns.barplot(
-        x="season", 
-        y="customer_count", 
-        data=byseason_df.sort_values(by="customer_count", ascending=False),
-        palette=colors1, 
-        ax=ax
-    )
-
-    ax.set_title("Jumlah Pelanggan Berdasarkan Musim", fontsize=30)
-    ax.set_ylabel(None)
-    ax.set_xlabel(None)
-    ax.tick_params(axis='x', labelsize=25)
-    ax.tick_params(axis='y', labelsize=20)
-    st.pyplot(fig)
-else:
-    st.warning("Tidak ada data untuk menampilkan jumlah pelanggan berdasarkan musim.")
-
-# Display season information
-st.markdown("## Masing-masing angka pada plot mewakili musim:")
-st.markdown("1 -> Cerah, Sedikit berawan, Sebagian berawan")
-st.markdown("2 -> Berkabut + Berawan, Berkabut + Awan terpecah, Berkabut + Sedikit berawan")
-st.markdown("3 -> Salju ringan, Hujan ringan + Petir + Awan tersebar")
-st.markdown("4 -> Hujan deras + Es batu + Petir + Kabut, Salju + Kabut")
 
 # Interpretation function for first question
 
@@ -223,7 +192,8 @@ def main3():
 
 if __name__ == "__main__":
     main3()
-    
+
+# pertanyaan 3
 def main1():
     st.title("Interpretasi untuk Pertanyaan Ke-1")
 
@@ -232,3 +202,35 @@ def main1():
 
 if __name__ == "__main__":
     main1()
+
+# Display visualization by season
+st.title("Demografi Pelanggan")
+st.subheader("Jumlah Pelanggan Berdasarkan Musim :fallen_leaf:")
+
+if not byseason_df.empty:
+    fig, ax = plt.subplots(figsize=(20, 10))
+    colors1 = ["#D3D3D3", "#D3D3D3", "#469536", "#D3D3D3", "#D3D3D3"]
+    
+    sns.barplot(
+        x="season", 
+        y="customer_count", 
+        data=byseason_df.sort_values(by="customer_count", ascending=False),
+        palette=colors1, 
+        ax=ax
+    )
+
+    ax.set_title("Jumlah Pelanggan Berdasarkan Musim", fontsize=30)
+    ax.set_ylabel(None)
+    ax.set_xlabel(None)
+    ax.tick_params(axis='x', labelsize=25)
+    ax.tick_params(axis='y', labelsize=20)
+    st.pyplot(fig)
+else:
+    st.warning("Tidak ada data untuk menampilkan jumlah pelanggan berdasarkan musim.")
+
+# Display season information
+st.markdown("## Masing-masing angka pada plot mewakili musim:")
+st.markdown("1 -> Cerah, Sedikit berawan, Sebagian berawan")
+st.markdown("2 -> Berkabut + Berawan, Berkabut + Awan terpecah, Berkabut + Sedikit berawan")
+st.markdown("3 -> Salju ringan, Hujan ringan + Petir + Awan tersebar")
+st.markdown("4 -> Hujan deras + Es batu + Petir + Kabut, Salju + Kabut")
