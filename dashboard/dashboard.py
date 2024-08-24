@@ -227,13 +227,12 @@ else:
 # Display season information
 st.write("""
 ## Masing-masing angka pada plot mewakili musim:
-1 -> Cerah, Sedikit berawan, Sebagian berawan
-2 -> Berkabut + Berawan, Berkabut + Awan terpecah, Berkabut + Sedikit berawan
-3 -> Salju ringan, Hujan ringan + Petir + Awan tersebar
-4 -> Hujan deras + Es batu + Petir + Kabut, Salju + Kabut
+1. Cerah, Sedikit berawan, Sebagian berawan
+2. Berkabut + Berawan, Berkabut + Awan terpecah, Berkabut + Sedikit berawan
+3. Salju ringan, Hujan ringan + Petir + Awan tersebar
+4. Hujan deras + Es batu + Petir + Kabut, Salju + Kabut
 """)
 
-st.write("kesimpulan")
-st.text_area("","Jumlah pelanggan terbanyak tercatat saat musim salju ringan dan hujan ringan dengan petir serta awan tersebar. Ini menunjukkan bahwa pelanggan cenderung menyewa sepeda ketika cuaca tidak terlalu panas, membuatnya nyaman untuk bersepeda.")
+st.text_area(value="Jumlah pelanggan terbanyak tercatat saat musim salju ringan dan hujan ringan dengan petir serta awan tersebar. Ini menunjukkan bahwa pelanggan cenderung menyewa sepeda ketika cuaca tidak terlalu panas, membuatnya nyaman untuk bersepeda.")
 #?                            - 3 -
 #! ----------------------------------------------------------------
