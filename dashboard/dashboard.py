@@ -231,6 +231,6 @@ st.markdown("2 -> Berkabut + Berawan, Berkabut + Awan terpecah, Berkabut + Sedik
 st.markdown("3 -> Salju ringan, Hujan ringan + Petir + Awan tersebar")
 st.markdown("4 -> Hujan deras + Es batu + Petir + Kabut, Salju + Kabut")
 
-st.write("Jumlah pelanggan terbanyak tercatat saat musim salju ringan dan hujan ringan dengan petir serta awan tersebar. Ini menunjukkan bahwa pelanggan cenderung menyewa sepeda ketika cuaca tidak terlalu panas, membuatnya nyaman untuk bersepeda.")
+st.write("## kesimpulan:\nJumlah pelanggan terbanyak tercatat saat musim salju ringan dan hujan ringan dengan petir serta awan tersebar. Ini menunjukkan bahwa pelanggan cenderung menyewa sepeda ketika cuaca tidak terlalu panas, membuatnya nyaman untuk bersepeda.")
 #?                            - 3 -
 #! ----------------------------------------------------------------
