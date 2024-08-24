@@ -1,4 +1,8 @@
-# Proyek Analisis Data - dicoding
+# Tugas Akhir...
+
+## Proyek analisis data
+ini adalah submission untuk tugas akhir kelas analisis data di [dicoding](https://www.dicoding.com/)
+
 ## Setup Environment
 ```
 conda create --name main-ds python=3.9
@@ -15,5 +19,5 @@ streamlit==1.31.1
 ## Run Streamlit App
 streamlit run dashboard.py
 
-## URL untuk dashboard
+## URL dashboard
 [KLIK AKU!!](https://submission--bike-sharing--dicoding.streamlit.app/)
