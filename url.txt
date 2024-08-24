@@ -1,1 +1,1 @@
-https://tugasproyektrya.streamlit.app/
+https://submission--bike-sharing--dicoding.streamlit.app/
