@@ -12,9 +12,9 @@ st.set_option('deprecation.showPyplotGlobalUse', False)
 
 # Load the dataset
 try:
-    all_df = pd.read_csv("bike_merge.csv")
+    all_df = pd.read_csv("data/main_data.csv")
 except FileNotFoundError:
-    st.error("File 'bike_merge.csv' tidak ditemukan. Pastikan file tersebut ada di direktori yang benar.")
+    st.error("File 'data/main_data' tidak ditemukan. Pastikan file tersebut ada di direktori yang benar.")
 
 # Ensure the date columns are correctly formatted
 datetime_columns = ["dteday"]
