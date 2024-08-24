@@ -30,7 +30,7 @@ else:
 # Display introduction text in Streamlit
 st.write(
     """
-    # Hasil Analisis
+    # Analisis Data Bike Sharing
     Analisis ini akan menguraikan beberapa pertanyaan penting yang mungkin relevan bagi pemilik bisnis, di antaranya:
     1. Bagaimana pola jumlah penyewaan sepeda berdasarkan waktu, baik secara jam maupun bulanan? Pada jam dan bulan berapa penyewaan meningkat?
     2. Seberapa sering pelanggan menyewa sepeda dalam beberapa bulan terakhir?
