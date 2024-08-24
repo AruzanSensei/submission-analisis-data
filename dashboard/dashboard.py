@@ -106,7 +106,7 @@ st.write("\n")
 st.title("1. Pola Waktu Penyewaan :clock7:")
 
 # Hour range selection slider
-selected_hour_range = st.slider("Pilih Rentang Jam", min_value=0, max_value=30, value=(0, 30))
+selected_hour_range = st.slider("Pilih Rentang Jam", min_value=0, max_value=30, value=(10, 20))
 
 # Filter data by hour range
 if "hr" in all_df.columns and "cnt_hourly" in all_df.columns:
