@@ -16,4 +16,4 @@ streamlit==1.31.1
 streamlit run dashboard.py
 
 ## URL untuk dashboard
-[ubah](https://tugasproyektrya.streamlit.app/)
+[KLIK AKU!!](https://submission--bike-sharing--dicoding.streamlit.app/)
