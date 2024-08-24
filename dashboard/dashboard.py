@@ -192,15 +192,6 @@ def main3():
 if __name__ == "__main__":
     main3()
 
-# pertanyaan 3
-def main1():
-    st.title("Pertanyaan Ke-1")
-
-    if st.button("Tampilkan Keterangan 1"):
-        st.success("Jumlah pelanggan terbanyak tercatat saat musim salju ringan dan hujan ringan dengan petir serta awan tersebar. Ini menunjukkan bahwa pelanggan cenderung menyewa sepeda ketika cuaca tidak terlalu panas, membuatnya nyaman untuk bersepeda.")
-
-if __name__ == "__main__":
-    main1()
 
 # Display visualization by season
 st.title("Demografi Pelanggan")
@@ -233,3 +224,13 @@ st.markdown("1 -> Cerah, Sedikit berawan, Sebagian berawan")
 st.markdown("2 -> Berkabut + Berawan, Berkabut + Awan terpecah, Berkabut + Sedikit berawan")
 st.markdown("3 -> Salju ringan, Hujan ringan + Petir + Awan tersebar")
 st.markdown("4 -> Hujan deras + Es batu + Petir + Kabut, Salju + Kabut")
+
+# pertanyaan 3
+def main1():
+    st.title("Pertanyaan Ke-1")
+
+    if st.button("Tampilkan Keterangan 1"):
+        st.success("Jumlah pelanggan terbanyak tercatat saat musim salju ringan dan hujan ringan dengan petir serta awan tersebar. Ini menunjukkan bahwa pelanggan cenderung menyewa sepeda ketika cuaca tidak terlalu panas, membuatnya nyaman untuk bersepeda.")
+
+if __name__ == "__main__":
+    main1()
