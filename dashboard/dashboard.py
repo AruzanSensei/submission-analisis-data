@@ -28,7 +28,7 @@ else:
 # Display introduction text in Streamlit
 st.write(
     """
-    # Analisis Data Bike Sharing
+    # Analisis Data Bike Sharing :bar_chart:
     _Analisis ini akan menguraikan beberapa pertanyaan penting yang mungkin relevan bagi pemilik bisnis, di antaranya:_
     1. Bagaimana pola jumlah penyewaan sepeda berdasarkan waktu, baik secara jam maupun bulanan? Pada jam dan bulan berapa penyewaan meningkat?
     2. Seberapa sering pelanggan menyewa sepeda dalam beberapa bulan terakhir?
@@ -103,7 +103,7 @@ else:
 st.write("\n")
 
 # Pertanyaan 1
-st.title("1. Pola Waktu Penyewaan Sepeda")
+st.title("1. Pola Waktu Penyewaan Sepeda :clock7:")
 
 # Hour range selection slider
 selected_hour_range = st.slider("Pilih Rentang Jam", min_value=0, max_value=30, value=(0, 30))
@@ -175,8 +175,8 @@ else:
 st.text_area("KESIMPULAN:","Pada beberapa bulan terakhir, pelanggan sering melakukan penyewaan sepeda, ditunjukkan oleh nilai recency yang rendah dan frekuensi yang tinggi.")
 
 # Pertanyaan 3
-st.title("3. Demografi Pelanggan")
-st.subheader("Jumlah Pelanggan Berdasarkan Musim :fallen_leaf:")
+st.title("3. Demografi Pelanggan :fallen_leaf:")
+st.subheader("Jumlah Pelanggan Berdasarkan Musim")
 
 if not byseason_df.empty:
     fig, ax = plt.subplots(figsize=(20, 10))
