@@ -1,4 +1,4 @@
-# Proyek-Analisis-Data
+# Proyek Analisis Data - dicoding
 ## Setup Environment
 ```
 conda create --name main-ds python=3.9
@@ -16,4 +16,4 @@ streamlit==1.31.1
 streamlit run dashboard.py
 
 ## URL untuk dashboard
-https://tugasproyektrya.streamlit.app/
+[ubah](https://tugasproyektrya.streamlit.app/)
