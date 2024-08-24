@@ -1,1 +1,2 @@
-https://submission--bike-sharing--dicoding.streamlit.app/
+github : https://github.com/AruzanSensei/submission-analisis-data/
+streamlit : https://submission--bike-sharing--dicoding.streamlit.app/
