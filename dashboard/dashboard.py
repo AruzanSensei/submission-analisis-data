@@ -30,7 +30,8 @@ else:
 # Display introduction text in Streamlit
 st.write(
     """
-    # :bike: Analisis Data Bike Sharing
+    # :bike: 
+    # Analisis Data Bike Sharing
     Analisis ini akan menguraikan beberapa pertanyaan penting yang mungkin relevan bagi pemilik bisnis, di antaranya:
     1. Bagaimana pola jumlah penyewaan sepeda berdasarkan waktu, baik secara jam maupun bulanan? Pada jam dan bulan berapa penyewaan meningkat?
     2. Seberapa sering pelanggan menyewa sepeda dalam beberapa bulan terakhir?
@@ -130,14 +131,6 @@ st.markdown("3 -> Salju ringan, Hujan ringan + Petir + Awan tersebar")
 st.markdown("4 -> Hujan deras + Es batu + Petir + Kabut, Salju + Kabut")
 
 # Interpretation function for first question
-def main1():
-    st.title("Interpretasi untuk Pertanyaan Ke-1")
-
-    if st.button("Tampilkan Keterangan 1"):
-        st.success("Jumlah pelanggan terbanyak tercatat saat musim salju ringan dan hujan ringan dengan petir serta awan tersebar. Ini menunjukkan bahwa pelanggan cenderung menyewa sepeda ketika cuaca tidak terlalu panas, membuatnya nyaman untuk bersepeda.")
-
-if __name__ == "__main__":
-    main1()
 
 # Create the RF DataFrame
 rf_df = create_rf_df(all_df)
@@ -230,3 +223,12 @@ def main3():
 
 if __name__ == "__main__":
     main3()
+    
+def main1():
+    st.title("Interpretasi untuk Pertanyaan Ke-1")
+
+    if st.button("Tampilkan Keterangan 1"):
+        st.success("Jumlah pelanggan terbanyak tercatat saat musim salju ringan dan hujan ringan dengan petir serta awan tersebar. Ini menunjukkan bahwa pelanggan cenderung menyewa sepeda ketika cuaca tidak terlalu panas, membuatnya nyaman untuk bersepeda.")
+
+if __name__ == "__main__":
+    main1()
