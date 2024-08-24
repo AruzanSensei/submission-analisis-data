@@ -27,7 +27,7 @@ if "dteday" in all_df.columns:
 else:
     st.error("Kolom 'dteday' tidak ditemukan dalam dataset.")
 
-# Display introduction text in Streamlit
+#! Display introduction text in Streamlit
 st.write(
     """
     # Analisis Data Bike Sharing
@@ -98,8 +98,10 @@ else:
     main_df = pd.DataFrame()
 
 
-# Interpretation function for first question
+#! Pertanyaan 1
 
+#! ----------------------------------------------------------------
+#? 2
 # Create the RF DataFrame
 rf_df = create_rf_df(all_df)
 
@@ -145,6 +147,7 @@ if not rf_df.empty:
     st.pyplot(fig)
 else:
     st.warning("Tidak ada data untuk menampilkan analisis RF.")
+#! ----------------------------------------------------------------
 
 # Interpretation function for second question
 def main2():
@@ -182,18 +185,18 @@ if "hr" in all_df.columns and "cnt_hourly" in all_df.columns:
 else:
     st.warning("Kolom 'hr' atau 'cnt_hourly' tidak ditemukan dalam dataset.")
 
-# Interpretation function for third question
-def main3():
-    st.title("Interpretasi Grafik untuk Pertanyaan Ke-3")
+#! pertanyaan 1
+def main1():
+    st.title("Interpretasi Grafik untuk Pertanyaan Ke-1")
 
-    if st.button("Tampilkan Keterangan 3"):
+    if st.button("Tampilkan Keterangan 1"):
         st.success("Penyewaan sepeda rata-rata meningkat pada jam 16.00-17.00, menunjukkan bahwa pelanggan lebih sering menyewa sepeda di sore hari.")
 
 if __name__ == "__main__":
-    main3()
+    main1()
 
 
-# pertanyaan 3
+#! pertanyaan 3
 
 # Display visualization by season
 st.title("3. Demografi Pelanggan")
