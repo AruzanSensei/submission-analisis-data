@@ -48,13 +48,12 @@ else:
 
 # Sidebar for date range selection
 if min_date and max_date:
-    with st.sidebar:
-        start_date, end_date = st.date_input(
-            label='Pilih Rentang Waktu Data: ',
-            min_value=min_date,
-            max_value=max_date,
-            value=[min_date, max_date]
-        )
+    start_date, end_date = st.date_input(
+        label='Pilih Rentang Waktu Data: ',
+        min_value=min_date,
+        max_value=max_date,
+        value=[min_date, max_date]
+    )
 else:
     st.error("Tidak dapat menampilkan rentang tanggal karena kolom 'dteday' tidak ada.")
 
