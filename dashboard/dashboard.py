@@ -194,7 +194,7 @@ if __name__ == "__main__":
 
 # pertanyaan 3
 def main1():
-    st.title("Interpretasi untuk Pertanyaan Ke-1")
+    st.title("Pertanyaan Ke-1")
 
     if st.button("Tampilkan Keterangan 1"):
         st.success("Jumlah pelanggan terbanyak tercatat saat musim salju ringan dan hujan ringan dengan petir serta awan tersebar. Ini menunjukkan bahwa pelanggan cenderung menyewa sepeda ketika cuaca tidak terlalu panas, membuatnya nyaman untuk bersepeda.")
