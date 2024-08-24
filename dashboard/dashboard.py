@@ -104,7 +104,7 @@ st.subheader("Jumlah Pelanggan Berdasarkan Musim :fallen_leaf:")
 
 if not byseason_df.empty:
     fig, ax = plt.subplots(figsize=(20, 10))
-    colors1 = ["#D3D3D3", "#D3D3D3", "#FFC0CB", "#D3D3D3", "#D3D3D3"]
+    colors1 = ["#D3D3D3", "#D3D3D3", "#469536", "#D3D3D3", "#D3D3D3"]
     
     sns.barplot(
         x="season", 
