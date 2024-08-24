@@ -19,15 +19,13 @@ except FileNotFoundError:
 # Ensure the date columns are correctly formatted
 datetime_columns = ["dteday"]
 if "dteday" in all_df.columns:
+    all_df["dteday"] = pd.to_datetime(all_df["dteday"])
     all_df.sort_values(by="dteday", inplace=True)
     all_df.reset_index(drop=True, inplace=True)
-    
-    for column in datetime_columns:
-        all_df[column] = pd.to_datetime(all_df[column])
 else:
     st.error("Kolom 'dteday' tidak ditemukan dalam dataset.")
 
-#! Display introduction text in Streamlit
+# Display introduction text in Streamlit
 st.write(
     """
     # Analisis Data Bike Sharing
@@ -55,6 +53,7 @@ if min_date and max_date:
         value=[min_date, max_date]
     )
 else:
+    start_date, end_date = min_date, max_date
     st.error("Tidak dapat menampilkan rentang tanggal karena kolom 'dteday' tidak ada.")
 
 # Function to create daily orders dataframe
@@ -96,17 +95,11 @@ if min_date and max_date:
     daily_orders_df = create_daily_orders_df(main_df)
 else:
     main_df = pd.DataFrame()
+    byseason_df = pd.DataFrame()
+    daily_orders_df = pd.DataFrame()
 
 
-#! pertanyaan 1
-#! ------------------------------------------------
-#?                       - 1 -
-
-if "dteday" in all_df.columns:
-    all_df['dteday'] = pd.to_datetime(all_df['dteday'])
-    all_df.set_index('dteday', inplace=True)
-
-# Display title
+# Pertanyaan 1
 st.title("Pola Waktu Penyewaan Sepeda")
 
 # Hour range selection slider
@@ -126,22 +119,16 @@ if "hr" in all_df.columns and "cnt_hourly" in all_df.columns:
     st.pyplot(plt.gcf())
 else:
     st.warning("Kolom 'hr' atau 'cnt_hourly' tidak ditemukan dalam dataset.")
-    
 
 st.text_area("KESIMPULAN:","Penyewaan sepeda rata-rata meningkat pada jam 16.00-17.00, menunjukkan bahwa pelanggan lebih sering menyewa sepeda di sore hari.")
-#?                       - 1 -
-#! ------------------------------------------------
 
+# Pertanyaan 2
+st.title("Analisis RF :mag:")
+st.subheader("Recency dan Frequency pada Setiap Bulan:")
 
-#! Pertanyaan 2
-#! ----------------------------------------------------------------
-#?                          - 2 -
 # Create the RF DataFrame
 rf_df = create_rf_df(all_df)
 
-# Display RF DataFrame
-st.title("Analisis RF :mag:")
-st.subheader("Recency dan Frequency pada Setiap Bulan:")
 if not rf_df.empty:
     st.write(rf_df)
     
@@ -182,19 +169,10 @@ if not rf_df.empty:
 else:
     st.warning("Tidak ada data untuk menampilkan analisis RF.")
 
-
 st.text_area("KESIMPULAN:","Pada beberapa bulan terakhir, pelanggan sering melakukan penyewaan sepeda, ditunjukkan oleh nilai recency yang rendah dan frekuensi yang tinggi.")
-#?                          - 2 -
-#! ----------------------------------------------------------------
 
-
-
-
-#! pertanyaan 3 
-#! ------------------------------------------------
-#?                       - 3 -
-# Display visualization by season
-st.title("3. Demografi Pelanggan")
+# Pertanyaan 3
+st.title("Demografi Pelanggan")
 st.subheader("Jumlah Pelanggan Berdasarkan Musim :fallen_leaf:")
 
 if not byseason_df.empty:
@@ -225,7 +203,4 @@ st.write("2 > Berkabut + Berawan, Berkabut + Awan terpecah, Berkabut + Sedikit b
 st.write("3 > Salju ringan, Hujan ringan + Petir + Awan tersebar")
 st.write("4 > Hujan deras + Es batu + Petir + Kabut, Salju + Kabut")
 
-
 st.text_area("KESIMPULAN:","Jumlah pelanggan terbanyak tercatat saat musim salju ringan dan hujan ringan dengan petir serta awan tersebar. Ini menunjukkan bahwa pelanggan cenderung menyewa sepeda ketika cuaca tidak terlalu panas, membuatnya nyaman untuk bersepeda.")
-#?                            - 3 -
-#! ----------------------------------------------------------------
