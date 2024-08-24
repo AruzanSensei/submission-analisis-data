@@ -143,7 +143,7 @@ if not rf_df.empty:
     with col2:
         st.metric("Rata-rata Frequency", value=avg_frequency)
 
-    fig, ax = plt.subplots(nrows=1, ncols=2, figsize=(50, 15))
+    fig, ax = plt.subplots(nrows=1, ncols=2, figsize=(35, 15))
 
     # Plot for Recency
     recency_df = rf_df.sort_values(by="recency", ascending=True).head(12)
