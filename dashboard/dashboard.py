@@ -36,6 +36,8 @@ st.write(
     """
 )
 
+st.write(".")
+
 # Validate date range in data
 if "dteday" in all_df.columns:
     min_date = all_df["dteday"].min()
@@ -98,6 +100,7 @@ else:
     byseason_df = pd.DataFrame()
     daily_orders_df = pd.DataFrame()
 
+st.write(".")
 
 # Pertanyaan 1
 st.title("1. Pola Waktu Penyewaan Sepeda")
