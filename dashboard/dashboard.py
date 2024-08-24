@@ -89,10 +89,6 @@ def create_rf_df(df):
         st.error("Kolom 'dteday' atau 'mnth_daily' tidak ditemukan dalam dataset.")
         return pd.DataFrame()
 
-if "dteday" in all_df.columns:
-    all_df['dteday'] = pd.to_datetime(all_df['dteday'])
-    all_df.set_index('dteday', inplace=True)
-
 # Filter data based on selected dates
 if min_date and max_date:
     main_df = all_df[(all_df["dteday"] >= pd.to_datetime(start_date)) & (all_df["dteday"] <= pd.to_datetime(end_date))]
@@ -105,6 +101,10 @@ else:
 #! pertanyaan 1
 #! ------------------------------------------------
 #?                       - 1 -
+
+if "dteday" in all_df.columns:
+    all_df['dteday'] = pd.to_datetime(all_df['dteday'])
+    all_df.set_index('dteday', inplace=True)
 
 # Display title
 st.title("Pola Waktu Penyewaan Sepeda")
@@ -126,6 +126,7 @@ if "hr" in all_df.columns and "cnt_hourly" in all_df.columns:
     st.pyplot(plt.gcf())
 else:
     st.warning("Kolom 'hr' atau 'cnt_hourly' tidak ditemukan dalam dataset.")
+    
 
 st.text_area("KESIMPULAN:","Penyewaan sepeda rata-rata meningkat pada jam 16.00-17.00, menunjukkan bahwa pelanggan lebih sering menyewa sepeda di sore hari.")
 #?                       - 1 -
