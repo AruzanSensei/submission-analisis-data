@@ -2,10 +2,9 @@ import pandas as pd
 import seaborn as sns
 import streamlit as st
 import matplotlib.pyplot as plt
-from babel.numbers import format_currency
 
 # Set style for seaborn
-sns.set(style='dark')
+sns.set(style='darkgrid')
 
 # Set streamlit option
 st.set_option('deprecation.showPyplotGlobalUse', False)
@@ -14,7 +13,7 @@ st.set_option('deprecation.showPyplotGlobalUse', False)
 try:
     all_df = pd.read_csv("dashboard/main_data.csv")
 except FileNotFoundError:
-    st.error("File 'dashboard/main_data' tidak ditemukan. Pastikan file tersebut ada di direktori yang benar.")
+    st.error("File 'dashboard/main_data.csv' tidak ditemukan. Pastikan file tersebut ada di direktori yang benar.")
 
 # Ensure the date columns are correctly formatted
 datetime_columns = ["dteday"]
@@ -31,10 +30,10 @@ else:
 st.write(
     """
     # Hasil Analisis Dataset Bike Sharing :bike:
-    Analisis ini akan menguraikan beberapa pertanyaan penting yang mungkin relevan bagi pemilik bisnis, di antaranya:
-    1. Musim apa yang memiliki jumlah penyewaan sepeda tertinggi?
+    Analisis ini menyajikan beberapa wawasan penting yang mungkin bermanfaat untuk pemilik bisnis, antara lain:
+    1. Pada musim apa penyewaan sepeda mencapai puncaknya?
     2. Seberapa sering pelanggan menyewa sepeda dalam beberapa bulan terakhir?
-    3. Bagaimana pola penyewaan sepeda berdasarkan jam? Pada jam berapa terjadi peningkatan penyewaan?
+    3. Bagaimana pola penyewaan sepeda berdasarkan waktu? Pada jam berapa penyewaan meningkat?
     """
 )
 
@@ -50,7 +49,7 @@ else:
 if min_date and max_date:
     with st.sidebar:
         start_date, end_date = st.date_input(
-            label='Pilih Rentang Waktu Data: ',
+            label='Pilih Rentang Waktu untuk Analisis: ',
             min_value=min_date,
             max_value=max_date,
             value=[min_date, max_date]
@@ -100,7 +99,7 @@ else:
 
 # Display visualization by season
 st.title("Demografi Pelanggan")
-st.subheader("Jumlah Pelanggan Berdasarkan Musim :fallen_leaf:")
+st.subheader("Distribusi Jumlah Pelanggan Berdasarkan Musim :fallen_leaf:")
 
 if not byseason_df.empty:
     fig, ax = plt.subplots(figsize=(20, 10))
@@ -115,27 +114,27 @@ if not byseason_df.empty:
     )
 
     ax.set_title("Jumlah Pelanggan Berdasarkan Musim", fontsize=30)
-    ax.set_ylabel(None)
-    ax.set_xlabel(None)
-    ax.tick_params(axis='x', labelsize=25)
-    ax.tick_params(axis='y', labelsize=20)
+    ax.set_xlabel("Musim", fontsize=20)
+    ax.set_ylabel("Jumlah Pelanggan", fontsize=20)
+    ax.tick_params(axis='x', labelsize=15)
+    ax.tick_params(axis='y', labelsize=15)
     st.pyplot(fig)
 else:
-    st.warning("Tidak ada data untuk menampilkan jumlah pelanggan berdasarkan musim.")
+    st.warning("Tidak ada data untuk ditampilkan berdasarkan musim.")
 
 # Display season information
-st.markdown("## Masing-masing angka pada plot mewakili musim:")
-st.markdown("1 -> Cerah, Sedikit berawan, Sebagian berawan")
-st.markdown("2 -> Berkabut + Berawan, Berkabut + Awan terpecah, Berkabut + Sedikit berawan")
-st.markdown("3 -> Salju ringan, Hujan ringan + Petir + Awan tersebar")
-st.markdown("4 -> Hujan deras + Es batu + Petir + Kabut, Salju + Kabut")
+st.markdown("## Keterangan Musim pada Plot:")
+st.markdown("1 -> Cerah, Sedikit Berawan, Sebagian Berawan")
+st.markdown("2 -> Berkabut + Berawan, Berkabut + Awan Terpecah, Berkabut + Sedikit Berawan")
+st.markdown("3 -> Salju Ringan, Hujan Ringan + Petir + Awan Tersebar")
+st.markdown("4 -> Hujan Deras + Es Batu + Petir + Kabut, Salju + Kabut")
 
 # Interpretation function for first question
 def main1():
-    st.title("Interpretasi untuk Pertanyaan Ke-1")
+    st.title("Penjelasan untuk Pertanyaan Ke-1")
 
-    if st.button("Tampilkan Keterangan 1"):
-        st.success("Jumlah pelanggan terbanyak tercatat saat musim salju ringan dan hujan ringan dengan petir serta awan tersebar. Ini menunjukkan bahwa pelanggan cenderung menyewa sepeda ketika cuaca tidak terlalu panas, membuatnya nyaman untuk bersepeda.")
+    if st.button("Lihat Penjelasan 1"):
+        st.success("Pelanggan paling banyak tercatat pada musim salju ringan dan hujan ringan dengan petir serta awan tersebar. Ini menunjukkan bahwa pelanggan cenderung menyewa sepeda ketika cuaca tidak terlalu panas, membuat bersepeda lebih nyaman.")
 
 if __name__ == "__main__":
     main1()
@@ -145,7 +144,7 @@ rf_df = create_rf_df(all_df)
 
 # Display RF DataFrame
 st.title("Analisis RF :mag:")
-st.subheader("Recency dan Frequency pada Setiap Bulan:")
+st.subheader("Recency dan Frequency per Bulan:")
 if not rf_df.empty:
     st.write(rf_df)
     
@@ -167,8 +166,8 @@ if not rf_df.empty:
     colors_recency = ["#90CAF9"] * len(recency_df)
     sns.barplot(y="recency", x="month", data=recency_df, palette=colors_recency, ax=ax[0])
     ax[0].set_ylabel(None)
-    ax[0].set_xlabel("Bulan ke-", fontsize=30)
-    ax[0].set_title("Berdasarkan Recency", fontsize=50)
+    ax[0].set_xlabel("Bulan", fontsize=30)
+    ax[0].set_title("Recency", fontsize=50)
     ax[0].tick_params(axis='y', labelsize=30)
     ax[0].tick_params(axis='x', labelsize=35)
 
@@ -177,21 +176,21 @@ if not rf_df.empty:
     colors_frequency = ["#90CAF9"] * len(frequency_df)
     sns.barplot(y="frequency", x="month", data=frequency_df, palette=colors_frequency, ax=ax[1])
     ax[1].set_ylabel(None)
-    ax[1].set_xlabel("Bulan ke-", fontsize=30)
-    ax[1].set_title("Berdasarkan Frequency", fontsize=50)
+    ax[1].set_xlabel("Bulan", fontsize=30)
+    ax[1].set_title("Frequency", fontsize=50)
     ax[1].tick_params(axis='y', labelsize=30)
     ax[1].tick_params(axis='x', labelsize=35)
 
     st.pyplot(fig)
 else:
-    st.warning("Tidak ada data untuk menampilkan analisis RF.")
+    st.warning("Tidak ada data untuk analisis RF.")
 
 # Interpretation function for second question
 def main2():
-    st.title("Interpretasi untuk Pertanyaan Ke-2")
+    st.title("Penjelasan untuk Pertanyaan Ke-2")
 
-    if st.button("Tampilkan Keterangan 2"):
-        st.success("Pada beberapa bulan terakhir, pelanggan sering melakukan penyewaan sepeda, ditunjukkan oleh nilai recency yang rendah dan frekuensi yang tinggi.")
+    if st.button("Lihat Penjelasan 2"):
+        st.success("Dalam beberapa bulan terakhir, pelanggan menunjukkan frekuensi penyewaan sepeda yang tinggi, yang terlihat dari recency yang rendah dan frekuensi penyewaan yang tinggi.")
 
 if __name__ == "__main__":
     main2()
@@ -202,7 +201,7 @@ if "dteday" in all_df.columns:
     all_df.set_index('dteday', inplace=True)
 
 # Display title
-st.title("Pola Waktu Penyewaan Sepeda")
+st.title("Pola Penyewaan Sepeda Berdasarkan Waktu")
 
 # Hour range selection slider
 selected_hour_range = st.slider("Pilih Rentang Jam", min_value=0, max_value=23, value=(0, 23))
@@ -214,7 +213,7 @@ if "hr" in all_df.columns and "cnt_hourly" in all_df.columns:
     # Plot hourly pattern
     plt.figure(figsize=(12, 6))
     sns.lineplot(x=selected_data['hr'], y=selected_data['cnt_hourly'], ci=None, color='blue')
-    plt.title("Pola Jumlah Penyewa Sepeda Harian Berdasarkan Waktu")
+    plt.title("Pola Penyewaan Sepeda Berdasarkan Jam")
     plt.xlabel("Jam")
     plt.ylabel("Jumlah Penyewa Sepeda Harian")
     plt.xticks(rotation=45, ha='right')
@@ -224,10 +223,10 @@ else:
 
 # Interpretation function for third question
 def main3():
-    st.title("Interpretasi Grafik untuk Pertanyaan Ke-3")
+    st.title("Penjelasan untuk Pertanyaan Ke-3")
 
-    if st.button("Tampilkan Keterangan 3"):
-        st.success("Penyewaan sepeda rata-rata meningkat pada jam 16.00-17.00, menunjukkan bahwa pelanggan lebih sering menyewa sepeda di sore hari.")
+    if st.button("Lihat Penjelasan 3"):
+        st.success("Penyewaan sepeda cenderung meningkat pada jam 16.00-17.00, menunjukkan bahwa pelanggan lebih sering menyewa sepeda di sore hari.")
 
 if __name__ == "__main__":
     main3()
