@@ -103,7 +103,7 @@ else:
 st.write("\n")
 
 # Pertanyaan 1
-st.title("1. Pola Waktu Penyewaan Sepeda :clock7:")
+st.title("1. Pola Waktu Penyewaan :clock7:")
 
 # Hour range selection slider
 selected_hour_range = st.slider("Pilih Rentang Jam", min_value=0, max_value=30, value=(0, 30))
