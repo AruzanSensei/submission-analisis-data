@@ -100,7 +100,7 @@ else:
     byseason_df = pd.DataFrame()
     daily_orders_df = pd.DataFrame()
 
-st.write("/n")
+st.write("\n")
 
 # Pertanyaan 1
 st.title("1. Pola Waktu Penyewaan Sepeda")
