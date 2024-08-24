@@ -147,7 +147,7 @@ if not rf_df.empty:
 
     # Plot for Recency
     recency_df = rf_df.sort_values(by="recency", ascending=True).head(12)
-    colors_recency = ["#90CAF9"] * len(recency_df)
+    colors_recency = ["#469536"] * len(recency_df)
     sns.barplot(y="recency", x="month", data=recency_df, palette=colors_recency, ax=ax[0])
     ax[0].set_ylabel(None)
     ax[0].set_xlabel("Bulan ke-", fontsize=30)
@@ -157,7 +157,7 @@ if not rf_df.empty:
 
     # Plot for Frequency
     frequency_df = rf_df.sort_values(by="frequency", ascending=False).head(12)
-    colors_frequency = ["#90CAF9"] * len(frequency_df)
+    colors_frequency = ["#469536"] * len(frequency_df)
     sns.barplot(y="frequency", x="month", data=frequency_df, palette=colors_frequency, ax=ax[1])
     ax[1].set_ylabel(None)
     ax[1].set_xlabel("Bulan ke-", fontsize=30)
