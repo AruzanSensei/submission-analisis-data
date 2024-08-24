@@ -25,6 +25,17 @@ if "dteday" in all_df.columns:
 else:
     st.error("Kolom 'dteday' tidak ditemukan dalam dataset.")
 
+# Display introduction text in Streamlit
+st.write(
+    """
+    # Analisis Data Bike Sharing
+    _Analisis ini akan menguraikan beberapa pertanyaan penting yang mungkin relevan bagi pemilik bisnis, di antaranya:_
+    1. Bagaimana pola jumlah penyewaan sepeda berdasarkan waktu, baik secara jam maupun bulanan? Pada jam dan bulan berapa penyewaan meningkat?
+    2. Seberapa sering pelanggan menyewa sepeda dalam beberapa bulan terakhir?
+    3. Pada musim apa jumlah penyewaan sepeda mencapai puncaknya?
+    """
+)
+
 # Validate date range in data
 if "dteday" in all_df.columns:
     min_date = all_df["dteday"].min()
@@ -53,18 +64,6 @@ def create_daily_orders_df(df):
     else:
         st.error("Kolom 'dteday' tidak ditemukan dalam dataset.")
         return pd.DataFrame()
-        
-# Display introduction text in Streamlit
-st.write(
-    """
-    # Analisis Data Bike Sharing
-    _Analisis ini akan menguraikan beberapa pertanyaan penting yang mungkin relevan bagi pemilik bisnis, di antaranya:_
-    1. Bagaimana pola jumlah penyewaan sepeda berdasarkan waktu, baik secara jam maupun bulanan? Pada jam dan bulan berapa penyewaan meningkat?
-    2. Seberapa sering pelanggan menyewa sepeda dalam beberapa bulan terakhir?
-    3. Pada musim apa jumlah penyewaan sepeda mencapai puncaknya?
-    """
-)
-
 
 # Function to create dataframe by season
 def create_byseason_df(df):
@@ -144,7 +143,7 @@ if not rf_df.empty:
     with col2:
         st.metric("Rata-rata Frequency", value=avg_frequency)
 
-    fig, ax = plt.subplots(nrows=1, ncols=2, figsize=(25, 15))
+    fig, ax = plt.subplots(nrows=1, ncols=2, figsize=(50, 15))
 
     # Plot for Recency
     recency_df = rf_df.sort_values(by="recency", ascending=True).head(12)
