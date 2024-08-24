@@ -1,7 +1,8 @@
 # Tugas Akhir Dicoding
 
 ## Proyek analisis data
-ini adalah submission untuk tugas akhir kelas analisis data di [dicoding](https://www.dicoding.com/). silahkan di koreksi :D
+ini adalah submission untuk tugas akhir kelas analisis data di [dicoding](https://www.dicoding.com/).
+_silahkan di koreksi :D_
 
 ## Setup Environment
 ```
