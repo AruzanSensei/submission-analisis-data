@@ -225,13 +225,15 @@ else:
     st.warning("Tidak ada data untuk menampilkan jumlah pelanggan berdasarkan musim.")
 
 # Display season information
-st.markdown("## Masing-masing angka pada plot mewakili musim:")
-st.markdown("1 -> Cerah, Sedikit berawan, Sebagian berawan")
-st.markdown("2 -> Berkabut + Berawan, Berkabut + Awan terpecah, Berkabut + Sedikit berawan")
-st.markdown("3 -> Salju ringan, Hujan ringan + Petir + Awan tersebar")
-st.markdown("4 -> Hujan deras + Es batu + Petir + Kabut, Salju + Kabut")
+st.write("""
+## Masing-masing angka pada plot mewakili musim:
+1 -> Cerah, Sedikit berawan, Sebagian berawan
+2 -> Berkabut + Berawan, Berkabut + Awan terpecah, Berkabut + Sedikit berawan
+3 -> Salju ringan, Hujan ringan + Petir + Awan tersebar
+4 -> Hujan deras + Es batu + Petir + Kabut, Salju + Kabut
+""")
 
-st.write_stream("kesimpulan")
+st.write("kesimpulan")
 st.text_area("","Jumlah pelanggan terbanyak tercatat saat musim salju ringan dan hujan ringan dengan petir serta awan tersebar. Ini menunjukkan bahwa pelanggan cenderung menyewa sepeda ketika cuaca tidak terlalu panas, membuatnya nyaman untuk bersepeda.")
 #?                            - 3 -
 #! ----------------------------------------------------------------
